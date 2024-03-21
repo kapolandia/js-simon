@@ -6,16 +6,17 @@ cards.forEach(card => {
     card.innerHTML = randomNumber;
     numberInCards.push(randomNumber);
 });
-
-setTimeout(askForNumbers, 3000);
+setTimeout(() =>{
+    cards.forEach(card => {
+        card.style.display = "none";
+    });
+}, 29999);
+setTimeout(askForNumbers, 30000);
 
 
 function askForNumbers(){
     const answer = [];
     let number = 1;
-    cards.forEach(card => {
-        card.style.display = "none";
-    });
     while(answer.length < 5){  
         answer.push(parseInt(prompt('Numero' + " " + number)));
         number++;
